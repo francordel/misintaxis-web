@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
 ---
-
 <!-- Contenedor con el icono y el texto -->
 <div class="logo-container">
   <Icon name="placeholder-logo" height="56px" />
@@ -12,12 +11,14 @@ import { Icon } from 'astro-icon';
   .logo-container {
     display: flex;
     align-items: center;
+    font-style: italic; /* Asegura que el texto esté en cursiva */
     gap: 10px; /* Espacio entre el icono y el texto */
   }
 
   .logo-title {
     font-size: 2.5rem; /* Ajusta según el tamaño del h1 */
     font-weight: bold;
+    font-style: italic; /* Asegura que el texto esté en cursiva */
     color: white; /* Ajusta al color del título */
     text-align: center;
     margin: 0;
@@ -28,9 +29,8 @@ import { Icon } from 'astro-icon';
       -1px 1px 0 black,  
       1px 1px 0 black;
   } 
-
-  /* Si en index.astro usa @keyframes fade-in, agrégalo aquí */
-  @keyframes fadeIn {
+    /* Si en index.astro usa @keyframes fade-in, agrégalo aquí */
+    @keyframes fadeIn {
     from {
       opacity: 0;
     }
@@ -38,6 +38,9 @@ import { Icon } from 'astro-icon';
       opacity: 1;
     }
   }
+</style>
+
+
 </style>
 
 
