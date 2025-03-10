@@ -69,3 +69,4 @@ If you find this theme useful, please consider donating to support the continued
 Please feel free to reach out to us on our Discord if you have questions or file an issue on the repo.
 
 [Join our Discord](https://littlesticks.dev/discord)
+

@@ -10,10 +10,7 @@ import Button from "./Button.astro";
     max-width: 600px;
   }
 
-  input[type='text'],
-  input[type='email'],
-  input[type='date'],
-  input[type='tel'] {
+  input[type="text"] {
     width: 100%;
     padding: 0.5rem 1rem;
     border: 2px solid #ccc;
@@ -23,7 +20,7 @@ import Button from "./Button.astro";
   }
 
   input:focus {
-    border: 2px solid#000;
+    border: 2px solid #000;
   }
 
   .signup__form :global(.btn) {
@@ -31,7 +28,41 @@ import Button from "./Button.astro";
   }
 </style>
 
-<form class="signup__form fade-in" action="">
-  <input type="email" placeholder="Email Address" required/>
-  <Button>Submit</Button>
+<!-- Formulario -->
+<form class="signup__form fade-in" id="analyzeForm">
+  <input type="text" id="phraseInput" placeholder="Frase a analizar" required />
+  <Button type="submit">¡Analiza! 🚀</Button>
 </form>
+
+<!-- Script para manejar el envío del formulario -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("analyzeForm");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const phrase = (document.getElementById("phraseInput") as HTMLInputElement).value;
+
+      if (!phrase.trim()) {
+        alert("Por favor, introduce una frase.");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: phrase }),
+        });
+
+        const result = await response.json();
+        console.log(result);
+        alert("Análisis generado con éxito!");
+      } catch (error) {
+        console.error("Error en el análisis:", error);
+        alert("Hubo un error al analizar la frase.");
+      }
+    });
+  });
+</script>
+

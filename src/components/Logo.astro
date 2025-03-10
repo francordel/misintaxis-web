@@ -1,7 +1,39 @@
 ---
-import {Icon} from 'astro-icon';
+import { Icon } from 'astro-icon';
 ---
 
-<!-- Feel free to replace this with the SVG for your own logo -->
-<Icon name="placeholder-logo" height="56px" />
+<!-- Contenedor con el icono y el texto -->
+<div class="logo-container">
+  <Icon name="placeholder-logo" height="56px" />
+  <h1 class="logo-title">MiSintaxis</h1>
+</div>
+
+<style>
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+  }
+
+  .logo-title {
+    font-size: 2.5rem; /* Ajusta según el tamaño del h1 */
+    font-weight: bold;
+    color: white; /* Ajusta al color del título */
+    text-align: center;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out; /* Añade el mismo efecto si es necesario */
+  } 
+
+  /* Si en index.astro usa @keyframes fade-in, agrégalo aquí */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
 

@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.3"
+    "astro": "^1.1.3",
+    "astro-theme-foundation": "file:"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
