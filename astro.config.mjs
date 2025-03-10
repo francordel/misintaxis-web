@@ -1,11 +1,9 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import { settings } from './src/data/settings';
-import sitemap from "@astrojs/sitemap";
 
-
-// https://astro.build/config
 export default defineConfig({
-  site: settings.site,
+  site: 'https://francordel.github.io/misintaxis-web/', // Reemplaza con la URL completa de tu sitio
   integrations: [sitemap()],
   vite: {
     ssr: {
