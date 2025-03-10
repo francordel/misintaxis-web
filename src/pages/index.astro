@@ -18,6 +18,23 @@ const seo = {
     min-height: 70vh;
     text-align: center;
   }
+   /* Estilos para el título con bordes negros */
+   h1 {
+    font-size: 3rem; /* Ajusta el tamaño según sea necesario */
+    font-weight: bold;
+    color: white; /* Color del texto principal */
+    text-shadow: 
+      -1px -1px 0 black,  
+      1px -1px 0 black,  
+      -1px 1px 0 black,  
+      1px 1px 0 black; /* Contorno negro */
+  }
+  /* Opcional: Ajustar en pantallas más pequeñas */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
 </style>
 
 <Layout seo={seo}>
