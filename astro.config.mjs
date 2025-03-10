@@ -3,7 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import { settings } from './src/data/settings';
 
 export default defineConfig({
-  site: 'https://francordel.github.io/misintaxis-web/', // Reemplaza con la URL completa de tu sitio
+  site: 'https://francordel.github.io',
+  base: 'misintaxis-web',
   integrations: [sitemap()],
   vite: {
     ssr: {
