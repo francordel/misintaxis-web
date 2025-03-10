@@ -1,5 +1,3 @@
+![misintaxis-web](public/misintaxisweb.png)
 # MiSintaxis
 Analizador automático de frases
-
-![misintaxis-web](public/misintaxisweb.png)
-
