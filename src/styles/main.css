@@ -51,7 +51,7 @@ body {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: var(--theme-background) url('/assets/images/bg.svg') no-repeat;
+  background: var(--theme-background) url('/misintaxis-web/assets/images/bg.svg') no-repeat;
   background-size: cover;
   background-position: center;
 }
