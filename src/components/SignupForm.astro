@@ -8,7 +8,7 @@ import Button from "./Button.astro";
     width: 100%;
     display: flex;
     max-width: 600px;
-    flex-direction: row; /* Por defecto en escritorio */
+    flex-direction: row;
   }
 
   input[type="text"] {
@@ -28,15 +28,14 @@ import Button from "./Button.astro";
     margin-left: 1rem;
   }
 
-  /* Estilos para pantallas pequeñas */
   @media (max-width: 600px) {
     .signup__form {
-      flex-direction: column; /* Apila los elementos en móviles */
+      flex-direction: column;
       align-items: center;
     }
 
     input[type="text"] {
-      margin-bottom: 1rem; /* Espacio entre el input y el botón */
+      margin-bottom: 1rem;
     }
 
     .signup__form :global(.btn) {
@@ -45,8 +44,36 @@ import Button from "./Button.astro";
       text-align: center;
     }
   }
-</style>
 
+  /* Estilos del Canvas */
+  .canvas {
+    border: 3px solid #000; /* Borde más grueso */
+    padding: 2rem; /* Más espacio interno */
+    margin-top: 1.5rem; /* Más separación del input */
+    width: 600px; /* Tamaño para escritorio */
+    height: 300px; /* Tamaño para escritorio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white !important; /* Asegura fondo blanco */
+    font-size: 1.5rem; /* Letra más grande */
+    font-weight: bold; /* Texto más destacado */
+    color: black !important; /* Asegura texto negro */
+    text-align: center; /* Centrar el texto */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  }
+
+  /* Estilos para móviles */
+  @media (max-width: 600px) {
+    .canvas {
+      width: 90%; /* Se ajusta al ancho del dispositivo */
+      height: 200px; /* Más pequeño en móviles */
+      font-size: 1.2rem; /* Letra un poco más pequeña */
+      padding: 1rem; /* Menos espacio interno */
+    }
+  }
+</style>
 
 <!-- Formulario -->
 <form class="signup__form fade-in" id="analyzeForm">
@@ -54,19 +81,50 @@ import Button from "./Button.astro";
   <Button type="submit">¡Analiza! 🚀</Button>
 </form>
 
-<!-- Script para manejar el envío del formulario -->
+<!-- Contenedor donde se inyectará el Canvas dinámicamente -->
+<div id="canvasContainer"></div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("analyzeForm");
+    const phraseInput = document.getElementById("phraseInput");
+    const canvasContainer = document.getElementById("canvasContainer");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const phrase = (document.getElementById("phraseInput") as HTMLInputElement).value;
+      const phrase = phraseInput.value.trim();
 
-      if (!phrase.trim()) {
+      if (!phrase) {
         alert("Por favor, introduce una frase.");
         return;
       }
+
+      // Eliminar cualquier canvas previo antes de crear uno nuevo
+      canvasContainer.innerHTML = "";
+
+      // Crear el nuevo canvas dinámico
+      const canvasDiv = document.createElement("div");
+      canvasDiv.classList.add("canvas");
+      canvasDiv.textContent = phrase;
+
+      // Asegurar tamaño correcto según el dispositivo
+      if (window.innerWidth <= 600) {
+        canvasDiv.style.width = "90%";
+        canvasDiv.style.height = "200px";
+        canvasDiv.style.fontSize = "1.2rem";
+        canvasDiv.style.padding = "1rem";
+      } else {
+        canvasDiv.style.width = "600px";
+        canvasDiv.style.height = "300px";
+        canvasDiv.style.fontSize = "1.5rem";
+        canvasDiv.style.padding = "2rem";
+      }
+
+      canvasDiv.style.backgroundColor = "white";
+      canvasDiv.style.color = "black";
+
+      // Agregar el canvas al contenedor
+      canvasContainer.appendChild(canvasDiv);
 
       try {
         const response = await fetch("/api/analyze", {
@@ -85,4 +143,3 @@ import Button from "./Button.astro";
     });
   });
 </script>
-
