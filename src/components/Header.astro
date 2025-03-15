@@ -5,13 +5,42 @@ import Logo from "./Logo.astro";
 <style>
   header {
     padding: 2rem 0;
-    
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
   }
 </style>
 
 <header>
   <Logo />
+  <nav>
+    <button id="webDibujaBtn" class="button">WebDibuja</button>
+  </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const baseURL = window.location.origin; // Obtiene el dominio actual
+    document.getElementById("webDibujaBtn").addEventListener("click", () => {
+      window.location.href = `${baseURL}/webdibuja`; // Redirige
+    });
+  });
+</script>

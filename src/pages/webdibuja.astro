@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Base.astro"; // Usa tu layout base
+import "./webdibuja/style.css";  // Importa CSS desde la carpeta correcta
+---
+
+<head>
+  <title>WebDibuja Análisis</title>
+</head>
+<body>
+  <header>
+    <h1>WebDibuja Análisis</h1>
+  </header>
+  <main>
+    <div id="webdibuja-container"></div>
+
+    <script>
+      // Verifica que el código solo se ejecute en el navegador
+      if (typeof window !== "undefined") {
+        import("./webdibuja/script.js")
+          .then(() => console.log("Script cargado correctamente."))
+          .catch((error) => console.error("Error al cargar el script:", error));
+      }
+    </script>
+  </main>
+</body>
