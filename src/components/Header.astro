@@ -1,17 +1,25 @@
 ---
 import Logo from "./Logo.astro";
+import ButtonSecundary from "./ButtonSecundary.astro";
 ---
 
 <style>
   header {
-    padding: 2rem 0;
-    
+    padding: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Logo a la izquierda, botón a la derecha */
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
   }
 </style>
 
 <header>
   <Logo />
+  <div class="right-section">
+    <ButtonSecundary href="https://francordel.github.io/dibuja-analisis/">Haz tu análisis</ButtonSecundary>
+  </div>
 </header>
