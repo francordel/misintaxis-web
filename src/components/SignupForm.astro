@@ -99,46 +99,37 @@ import Button from "./Button.astro";
         return;
       }
 
-      // Eliminar cualquier canvas previo antes de crear uno nuevo
+      // Borramos cualquier canvas previo
       canvasContainer.innerHTML = "";
 
-      // Crear el nuevo canvas dinámico
+      // Creamos un div para el "canvas" (solo visual; si usas <canvas> real, igual)
       const canvasDiv = document.createElement("div");
       canvasDiv.classList.add("canvas");
-      canvasDiv.textContent = phrase;
-
-      // Asegurar tamaño correcto según el dispositivo
-      if (window.innerWidth <= 600) {
-        canvasDiv.style.width = "300px";
-        canvasDiv.style.height = "200px";
-        canvasDiv.style.fontSize = "1.2rem";
-        canvasDiv.style.padding = "1rem";
-      } else {
-        canvasDiv.style.width = "600px";
-        canvasDiv.style.height = "300px";
-        canvasDiv.style.fontSize = "1.5rem";
-        canvasDiv.style.padding = "2rem";
-      }
-
-      canvasDiv.style.backgroundColor = "white";
-      canvasDiv.style.color = "black";
-
-      // Agregar el canvas al contenedor
+      canvasDiv.textContent = "Analizando la frase, por favor espera...";
       canvasContainer.appendChild(canvasDiv);
 
       try {
+        // Llamamos al endpoint que creamos
         const response = await fetch("/api/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: phrase }),
         });
 
+        if (!response.ok) {
+          throw new Error("Error en la respuesta del servidor.");
+        }
+
         const result = await response.json();
-        console.log(result);
-        alert("Análisis generado con éxito!");
+        if (result.success) {
+          // Aquí sustituyes el texto por el análisis que viene de OpenAI
+          canvasDiv.textContent = result.analysis;
+        } else {
+          canvasDiv.textContent = "No se pudo analizar la frase.";
+        }
       } catch (error) {
         console.error("Error en el análisis:", error);
-        alert("Hubo un error al analizar la frase.");
+        canvasDiv.textContent = "Hubo un error al analizar la frase.";
       }
     });
   });
