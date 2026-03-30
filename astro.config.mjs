@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import cloudflare from '@astrojs/cloudflare';
+import icon from 'astro-icon';
 
 export default defineConfig({
-  site: 'http://localhost:4321',
+  site: 'https://francordel.com',
   output: 'server',
-  integrations: [sitemap()],
-  vite: {
-    ssr: {
-      external: ['svgo'],
-    },
-  },
+  adapter: cloudflare(),
+  integrations: [sitemap(), icon()],
 });

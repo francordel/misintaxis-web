@@ -1,5 +1,5 @@
 {
-  "name": "astro-theme-foundation",
+  "name": "misintaxis-web",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,13 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.0",
-    "astro-theme-foundation": "file:",
+    "@astrojs/cloudflare": "^13.1.4",
+    "astro": "^6.1.1",
     "openai": "^4.87.4"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^1.0.0",
-    "astro-icon": "^0.7.3",
+    "@astrojs/sitemap": "^3.0.0",
+    "@iconify-json/mdi": "^1.2.3",
+    "astro-icon": "^1.1.5",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.14"

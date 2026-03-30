@@ -44,13 +44,8 @@ const MAX_CONCURRENT = 10;       // máximo de llamadas simultáneas a OpenAI
 // Ventana deslizante: IP → array de timestamps de requests
 const ipWindows = new Map<string, number[]>();
 
-// Limpiar IPs inactivas cada 5 minutos para no acumular memoria
-setInterval(() => {
-  const cutoff = Date.now() - WINDOW_MS;
-  for (const [ip, times] of ipWindows) {
-    if (times.every(t => t < cutoff)) ipWindows.delete(ip);
-  }
-}, 5 * 60_000);
+// Nota: en Cloudflare Workers la memoria es por isolate (stateless entre requests).
+// El rate limiting en memoria es best-effort; Cloudflare WAF cubre el resto.
 
 // Devuelve true si la IP está dentro del límite, false si está bloqueada
 function checkRateLimit(ip: string): boolean {
@@ -66,7 +61,7 @@ function checkRateLimit(ip: string): boolean {
 let activeCalls = 0;
 
 // ── Endpoint ──────────────────────────────────────────────────────────────────
-export const post: APIRoute = async ({ request, clientAddress }) => {
+export const POST: APIRoute = async ({ request, clientAddress }) => {
   // 1. Identificar IP (clientAddress en Astro SSR; x-forwarded-for como fallback)
   const ip = clientAddress ?? request.headers.get('x-forwarded-for') ?? 'unknown';
 
