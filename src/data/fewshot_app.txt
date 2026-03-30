@@ -1,0 +1,149 @@
+<s>Es probable que él vuelva hoy</s><s>[O.Compuesta [GV/PN [NP Es] [GAdj/ATR [N probable]]] [OS.Sustantiva/S [Nx que] [GN/S [N él]] [GV/PV [NP vuelva] [GAdv/CCTmp [N hoy]]]]]</s>
+<s>Los vulcanólogos investigan las causas de que el volcán explote</s><s>[O.Compuesta [GN/S [Det Los] [N vulcanólogos]] [GV/PV [NP investigan] [GN/CD [Det las] [N causas] [GPrep/CNombre [E [Prep de]] [OS.Sustantiva/T [Nx que] [GN/S [Det el] [N volcán]] [GV/PV [NP explote]]]]]]]</s>
+<s>Xavi no sabe si hoy vendrá su hija</s><s>[O.Compuesta [GN/S [N Xavi]] [GV/PV [MN [Adv no]] [NP sabe] [Nx si] [OS.Sustantiva/CD [GV/PV [GAdv/CCTmp [N hoy]] [NP vendrá]] [GN/S [Det su] [N hija]]]]]</s>
+<s>Es asombroso que Alejandro haya entregado el trabajo</s><s>[O.Compuesta [GV/PN [NP Es] [GAdj/ATR [N asombroso]]] [OS.Sustantiva/S [Nx que] [GN/S [N Alejandro]] [GV/PV [NP haya entregado] [GN/CD [Det el] [N trabajo]]]]]</s>
+<s>Es probable que tú tengas gastroenteritis</s><s>[O.Compuesta [GV/PN [NP Es] [GAdj/ATR [N probable]]] [OS.Sustantiva/S [Nx que] [GN/S [N tú]] [GV/PV [NP tengas] [GN/CD [N gastroenteritis]]]]]</s>
+<s>La hoja explica cómo cargar el móvil</s><s>[O.Compuesta [GN/S [Det La] [N hoja]] [GV/PV [NP explica] [GPrep/CCModo [Nx cómo] [GV/PV [NP cargar]] [GN/S [Det el] [N móvil]]]]]</s>
+<s>Silvia confía en que la clase acabe antes</s><s>[O.Compuesta [GN/S [N Silvia]] [GV/PV [NP confía] [GPrep/CR [E [Prep en]] [OS.Sustantiva/T [Nx que] [GN/S [Det la] [N clase]] [GV/PV [NP acabe] [GAdv/CCTmp [N antes]]]]]]]</s>
+<s>Mario no daba crédito a que Felipe jugase a la petanca</s><s>[O.Compuesta [GN/S [N Mario]] [GV/PV [MN [Adv no]] [NP daba] [GN/CD [N crédito]] [GPrep/CI [E [Prep a]] [OS.Sustantiva/T [Nx que] [GN/S [N Felipe]] [GV/PV [NP jugase] [GPrep/CR [E [Prep a]] [GN/T [Det la] [N petanca]]]]]]]]</s>
+<s>Javi evitó que ellos cogieran el dinero</s><s>[O.Compuesta [GN/S [N Javi]] [GV/PV [NP evitó] [OS.Sustantiva/CD [Nx que] [GN/S [N ellos]] [GV/PV [NP cogieran] [GN/CD [Det el] [N dinero]]]]]]</s>
+<s>Juan me dijo que tú estarías en casa</s><s>[O.Compuesta [GN/S [N Juan]] [GV/PV [GN/CI [N me]] [NP dijo] [OS.Sustantiva/CD [Nx que] [GN/S [N tú]] [GV/PV [Núcleo Verbal estarías] [GAdv/CCLugar [E [Prep en]] [GN/T [N casa]]]]]]]</s>
+<s>Me parece genial que Juan quiera el dinero</s><s>[O.Compuesta [GV/PN [GN/CI [N Me]] [NP parece] [GAdj/ATR [N genial]]] [OS.Sustantiva/S [Nx que] [GN/S [N Juan]] [GV/PV [NP quiera] [GN/CD [Det el] [N dinero]]]]]</s>
+<s>Enrique no sabía si ellos estaban felices</s><s>[O.Compuesta [GN/S [N Enrique]] [GV/PV [MN [Adv no]] [NP sabía] [OS.Sustantiva/CD [Nx si] [GN/S [N ellos]] [GV/PN [NP estaban] [GAdj/ATR [N felices]]]]]]</s>
+<s>Celia ya sabe cómo funciona esta aplicación</s><s>[O.Compuesta [GN/S [N Celia]] [GV/PV [GAdv/CCTmp [N ya]] [NP sabe] [OS.Sustantiva/CD [GV/PV [GAdv/CCModo [N cómo]] [NP funciona]] [GN/S [Det esta] [N aplicación]]]]]</s>
+<s>Lydia rechazó la idea de que Roque cogiese el coche</s><s>[O.Compuesta [GN/S [N Lydia]] [GV/PV [NP rechazó] [GN/CD [Det la] [N idea] [GPrep/CN [E [Prep de]] [OS.Sustantiva/T [Nx que] [GN/S [N Roque]] [GV/PV [NP cogiese] [GN/CD [Det el] [N coche]]]]]]]]</s>
+<s>Ellos desconocían si España ganaría el partido</s><s>[O.Compuesta [GN/S [N Ellos]] [GV/PV [NP desconocían] [OS.Sustantiva/CD [Nx si] [GN/S [N España]] [GV/PV [NP ganaría] [GN/CD [Det el] [N partido]]]]]]</s>
+<s>Pedro estaba harto de que ellos gritasen</s><s>[O.Compuesta [GN/S [N Pedro]] [GV/PN [NP estaba] [GAdj/ATR [N harto] [GPrep/CAdjetivo [E [Prep de]] [OS.Sustantiva/T [Nx que] [GN/S [N ellos]] [GV/PV [NP gritasen]]]]]]]</s>
+<s>Ancelotti asegura que Florentino hará fichajes</s><s>[O.Compuesta [GN/S [N Ancelotti]] [GV/PV [NP asegura] [OS.Sustantiva/CD [Nx que] [GN/S [N Florentino]] [GV/PV [NP hará] [GN/CD [N fichajes]]]]]]</s>
+<s>Ellos hablaban de que él era el mejor</s><s>[O.Compuesta [GN/S [N Ellos]] [GV/PV [NP hablaban] [GPrep/CR [E [Prep de]] [OS.Sustantiva/T [Nx que] [GN/S [N él]] [GV/PN [NP era] [GN/ATR [Det el] [N mejor]]]]]]]</s>
+<s>Pepe impidió que Antonio dejase el trabajo</s><s>[O.Compuesta [GN/S [N Pepe]] [GV/PV [NP impidió] [OS.Sustantiva/CD [Nx que] [GN/S [N Antonio]] [GV/PV [NP dejase] [GN/CD [Det el] [N trabajo]]]]]]</s>
+<s>No queda carne de modo que comeré pescado</s><s>[O.Compuesta [GV/PV [MN [N No]] [NP queda]] [GN/S [N carne]] [Const Ilat Ex/AP [Nx de modo que] [GV/PV [NP comeré] [GN/CD [N pescado]]]]]</s>
+<s>Él utiliza GitHub con la intención de facilitarse el trabajo</s><s>[O.Compuesta [GN/S [N Él]] [GV/PV [NP utiliza] [GN/CD [N GitHub]] [Const Ilat In/CC [Nx con la intención de] [GV/PV [NP facilitarse] [GN/CD [Det el] [N trabajo]]]]]]</s>
+<s>Hace lo necesario con tal del ganar</s><s>[O.Compuesta [GV/PV [NP Hace] [GN/CD [N necesario]] [Const Ilat In/CC [Nx con tal de] [GV/PV [NP ganar]]]]]</s>
+<s>Mientras yo voy a clase, tú limpia la habitación</s><s>[O.Compuesta [Const Temp Ex/AP [Nx Mientras] [GN/S [N yo]] [GV/PV [NP voy] [GPrep/CCL [E [Prep a]] [GN/T [N clase,]]]]] [GN/S [N tú]] [GV/PV [NP limpia] [GN/CD [Det la] [N habitación]]]]</s>
+<s>Cada vez que lo intento, lo consigo</s><s>[O.Compuesta [Const Temp Ex/AP [Nx Cada vez que] [GV/PV [GN/CD [N lo]] [NP intento,]]] [GV/PV [GN/CD [N lo]] [NP consigo]]]</s>
+<s>Cuando nosotros terminemos eso, tú te probarás los zapatos</s><s>[O.Compuesta [Const Temp Ex/AP [Nx [Nx Cuando]] [Const Temp Ex/AP/S [GN [N nosotros]]] [GV/PV [NP terminemos] [GN/CD [N eso,]]]] [GN/S [N tú]] [GV/PV [NP te probarás] [GN/CD [Det los] [N zapatos]]]]</s>
+<s>Antonio ayuda a las personas para sentirse feliz</s><s>[O.Compuesta [GN/S [N Antonio]] [GV/PV [NP ayuda] [GPrep/CI [E a] [GN/T [Det las] [N personas]]] [03_/CCFin [Nx para] [GV/PV [NP sentirse] [N feliz]]]]]</s>
+<s>Para que lo sepas, me caes mal</s><s>[O.Compuesta [Const Fin Ex/AP [Nx Para que] [GV/PV [GN/CD [N lo]] [NP sepas,]]] [GV/PV [GN/CI [N me]] [NP caes] [GAdv/CCM [N mal]]]]</s>
+<s>Se feliz, que no te arruinen el día</s><s>[O.Compuesta [GV/PN [NP Se] [GAdj/ATR [N feliz,]]] [Const Fin [Nx que] [GV/PV [MN [N no]] [GN/CI [N te]] [NP arruinen] [GAdj/CD [Det el] [N día]]]]]</s>
+<s>Por más que yo lo intento, no hay manera</s><s>[O.Compuesta [Const Conc Ex/AP [Nx Por más que] [GN/S [N yo]] [GV/PV [GN/CD [N lo]] [NP intento,]]] [GV/PV [MN [N no]] [NP hay] [GN/CD [N manera]]]]</s>
+<s>No acierta ni intentándolo tres veces</s><s>[O.Compuesta [GV/PV [MN [N No]] [NP acierta]] [Const Conc Ex/AP [Nx ni] [GV/PV [NP intentándolo] [Det tres] [N veces]]]]</s>
+<s>No deja de fumar aunque se ahogue</s><s>[O.Compuesta [GV/PV [MN [N No]] [NP deja] [GPrep/CR [E de] [GN/T [N fumar]]]] [Const Conc Ex/AP [Nx aunque] [GV/PV [NP se ahogue]]]]</s>
+<s>El informático es la persona más trabajadora que he visto</s><s>[O.Compuesta [GN/S [Det El] [N informático]] [GV/PN [NP es] [GN/ATR [Det la] [N persona] [Const Sup [GAdj/CN [Cuant más] [N trabajadora]] [OS.Relativo [GV/PV [Nx/CD [GN [N que]]] [NP he visto]]]]]]]</s>
+<s>MiSintaxis es la aplicación más útil que existe</s><s>[O.Compuesta [GN/S [N MiSintaxis]] [GV/PN [NP es] [GN/ATR [Det la] [N aplicación] [Const Sup [GAdj/CN [Cuant más] [N útil]] [OS.Relativo [GV/PV [Nx/CD [GN [N que]]] [NP existe]]]]]]]</s>
+<s>Gabriel es el artista más grande que conozco de este país</s><s>[O.Compuesta [GN/S [N Gabriel]] [GV/PN [NP es] [GN/AT [Det el] [N artista] [GAdj/CN [Cuant más] [N grande] [Const Sup [GV/PV [Nx/CD [N que]] [NP conozco] [GPrep/CR [E de] [GN/T [Det este] [N país]]]]]]]]]</s>
+<s>Le golpearon tan fuerte que se durmió</s><s>[O.Compuesta [GV/PV [GN/CD [N Le]] [NP golpearon] [Const Cons [GAdj/CCM [Det tan] [N fuerte]] [OS [Nx que] [GV/PV [NP se durmió]]]]]]</s>
+<s>Era tan fuerte que levantaba 5 kilos</s><s>[O.Compuesta [GV/PN [NP Era] [Const Cons [GAdj/ATR [Cuant tan] [N fuerte]] [OS [Nx que] [GV/PV [NP levantaba] [GN/CCCant [Det 5] [N kilos]]]]]]]</s>
+<s>Insulta tanto que parece un maleducado</s><s>[O.Compuesta [GV/PV [NP Insulta] [Const Cons [GAdv/CCCant [N tanto]] [OS [Nx que] [GV/PN [NP parece] [GN/ATR [Det un] [N maleducado]]]]]]]</s>
+<s>Mientras trabajes ahorrarás</s><s>[O.Compuesta [Const Cond Ex/AP [Nx Mientras] [GV/PV [NP trabajes]]] [GV/PV [NP ahorrarás]]]</s>
+<s>Si yo fuese tú no me pelearía con él</s><s>[O.Compuesta [Const Cond Ex/AP [Nx Si] [GN/S [N yo]] [GV/PN [NP fuese] [GN/ATR [N tú]]]] [GV/PV [MN [N no]] [GN/CI [N me]] [NP pelearía] [GPrep/CR [E con] [GN/T [N él]]]]]</s>
+<s>No verás el mundo a no ser que salgas de tu ciudad natal</s><s>[O.Compuesta [GV/PV [MN [N No]] [NP verás] [GN/CD [Det el] [N mundo]]] [Const Cond Ex/AP [Nx a no ser que] [GV/PV [NP salgas] [GPrep/CR [E de] [GN/T [Det tu] [N ciudad]]]]]]</s>
+<s>Álvaro se volvió peluquero dado que Pedro necesitaba un buen corte de pelo</s><s>[O.Compuesta [GN/S [N Álvaro]] [GV/PV [NP se volvió] [N peluquero]] [Const Caus Ex/AP [Nx dado que] [GV/PV [N Pedro] [NP necesitaba] [GN/CD [Det un] [GAdj/CN [N buen]] [N corte] [GPrep/CN [E de] [GN/T [N pelo]]]]]]]</s>
+<s>Julia y Malena no fueron a Oslo debido a que sus amigos no iban</s><s>[O.Compuesta [GN/S [N Julia] [Nx y] [O3_ Malena]] [GV/PV [MN [N no]] [NP fueron] [GPrep/CCL [E a] [GN/T [N Oslo]]]] [Const Caus Ex/AP [Nx debido a que] [GN/S [Det sus] [N amigos]] [GV/PV [MN [N no]] [NP iban]]]]</s>
+<s>Ellos fueron a Kiev porque les apetecía</s><s>[O.Compuesta [GN/S [N Ellos]] [GV/PV [NP fueron] [GPrep/CCL [E a] [GN/T [N Kiev]]] [Const Caus In/CCCausa [Nx porque] [GV/PV [GN/CI [N les]] [NP apetecia]]]]]</s>
+<s>Conseguimos algo mejor que lo que habíamos pensado</s><s>[O.Compuesta [GV/PV [NP Conseguimos] [Const Comp [GN/CD [N algo] [GAdj/CN [N mejor]]] [OS [Nx que] [GV/PV [GN/CD [N lo]] que [NP habíamos pensado]]]]]]</s>
+<s>Un erasmus hace más viajes que un diplomático</s><s>[O.Compuesta [GN/S [Det Un] [N erasmus]] [GV/PV [NP hace] [Const Comp [GN/CCCant [Det más] [N viajes]] [OS [Nx que] [GN/S [Det un] [N diplomático]]]]]]</s>
+<s>Álvaro sale menos veces que (sale) Bea</s><s>[O.Compuesta [GN/S [N Álvaro]] [GV/PV [NP sale] [Const Comp [GN/CCCant [Det menos] [N veces]] [OS [Nx que] [GV/PV [NP (sale)]] [GN/S [N Bea]]]]]]</s>
+<s>Ellos son los que trabajan bien</s><s>[O.Compuesta [GN/S [N Ellos]] [GV/PN [NP son] [GN/ATR [Det los] [OS.Relativo sin AntExp Semlib/CN [Nx/S que] [GV/PV [NP trabajan] [GAdv/CCM [N bien]]]]]]]</s>
+<s>Entregaremos el premio al que gane la competición</s><s>[O.Compuesta [GV/PV [NP Entregaremos] [GN/CD [Det el] [N premio]] [GPrep/CI [E [Prep al]] [OS.Sustantiva/T [GN/S [Nx que]] [GV/PV [NP gane] [GN/CD [Det la] [N competición]]]]]]]</s>
+<s>Quien escribe con corrección ha leído.</s><s>[O.Compuesta [OS.Relativo sin AntExp Lib/S [GN/S [Nx Quien]] [GV/PV [NP escribe] [GPrep/CCModo [E [Prep con]] [GN/T [N corrección]]]]] [GV/PV [NP ha leído.]]]</s>
+<s>Las flores que compramos antes de ayer en Berlín se secaron enseguida</s><s>[O.Compuesta [GN/S [Det Las] [N flores] [OS.Relativo AntExp Esp/CN [GV/PV [Nx/CD [Nx que]] [NP compramos] [GAdv/CCTmp [N antes de ayer] [GPrep/CCL [E [Prep en]] [GN/T [N Berlín]]]]]] [GV/PV [NP se secaron] [GAdv/CCTmp [N enseguida]]]]]</s>
+<s>Pasó una chica que llevaba un vestido verde</s><s>[O.Compuesta [GV/PV [NP Pasó]] [GN/S [Det una] [N chica] [OS.Relativo AntExp Esp/CN [Nx/S [Nx que]] [GV/PV [NP llevaba] [GN/CD [Det un] [N vestido] [GAdj/CN [N verde]]]]]]]</s>
+<s>Hace varios días que yo no te veo</s><s>[O.Compuesta [GV/PV [MN [Adv no]] [GN/CD [N te]] [NP veo]]]</s>
+<s>Quien dice eso miente</s><s>[O.Compuesta [OS.Relativo sin AntExp Lib/S [Nx/S Quien] [GV/PV [NP dice] [GN/CD [N eso]]]] [GV/PV [NP miente]]]</s>
+<s>Aprobaron las alumnas que estudiaron durante el confinamiento</s><s>[O.Compuesta [GV/PV [NP Aprobaron]] [GN/S [Det las] [N alumnas] [OS.Relativo AntExp Esp/CN [GN/S [Nx que]] [GV/PV [NP estudiaron] [GPrep/CCTmp [E [Prep durante]] [GN/T [Det el] [N confinamiento]]]]]]]</s>
+<s>Me gustan las galletas que tienen trocitos de chocolate</s><s>[O.Compuesta [GV/PV [GN/CI [N Me]] [NP gustan]] [GN/S [Det las] [N galletas] [OS.Relativo AntExp Esp [Nx que] [GV/PV [NP tienen] [GN/CD [N trocitos] [GPrep/CN [E de] [GN/T [N chocolate]]]]]]]]</s>
+<s>Es donde estudio</s><s>[O.Compuesta [GV/PN [NP Es] [OS.Relativo sin AntExp Lib/AT [GV/PV [Nx/CCL donde] [NP estudio]]]]]</s>
+<s>Saluda a quien te diga</s><s>[O.Compuesta [GV/PV [NP Saluda] [GPrep/CD [Nx a] [OS.Relativo sin AntExp Lib/T [GV/PV [Nx/CD quien] [GN/ [N te]] [NP diga]]]]]]</s>
+<s>El pintor pintó lo que se le encargó</s><s>[O.Compuesta [GN/S [Det El] [N pintor]] [GV/PV [NP pintó] [GN/CD [N lo] [OS.Relativo sin AntExp Semlib/CN [GN/S [N que]] [GV/PV [GN/CD [N se]] [GN/CI [N le]] [NP encargó]]]]]]</s>
+<s>Mi padre, que estaba muy cansado, se acostó pronto</s><s>[O.Compuesta [GN/S [Det Mi] [N padre,] [OS.Relativo AntExp Esp/CN [Nx/S [Nx que]] [GV/PN [NP estaba] [GAdj/ATR [MOD muy] [N cansado,]]]]] [GV/PV [NP se acostó] [GAdv/CCTmp [N pronto]]]]</s>
+<s>Esos que están con él nos han explicado las indicaciones que necesitábamos</s><s>[O.Compuesta [GN/S [N Esos] [OS.Relativo AntExp Esp/CN [Nx/S [Nx que]] [GV/PN [NP están] [GPrep/ATR [E [Prep con]] [GN/T [N él]]]]]] [GV/PV [GN/CI [N nos]] [NP han explicado] [GN/CD [Det las] [N indicaciones] [OS.Relativo AntExp Esp/CD [GV/PV [Nx/CD [Nx que]] [NP necesitábamos]]]]]]</s>
+<s>El caballo que ganó la carrera era de raza española</s><s>[O.Compuesta [GN/S [Det El] [N caballo] [OS.Relativo AntExp Esp/CN [Nx/S [Nx que]] [GV/PV [NP ganó] [GN/CD [Det la] [N carrera]]]]] [GV/PN [NP era] [GPrep/ATR [E [Prep de]] [GN/T [N raza] [GAdj/CN [N española]]]]]]</s>
+<s>Esta es la casa donde nació Juan</s><s>[O.Compuesta [GN/S [Det Esta]] [GV/PN [NP es] [GN/ATR [Det la] [N casa] [OS.Relativo AntExp Esp/CN [GV/PV [GAdv/CCL [Nx donde]] [NP nació]] [GN/S [N Juan]]]]]]</s>
+<s>Entregó lo que se prometió</s><s>[O.Compuesta [GV/PV [NP Entregó] [OS.Relativo sin AntExp Semlib/CN [N lo] [Nx/S que] [GV/PV [GN/CD [N se]] [NP prometió]]]]]</s>
+<s>Alejandro pinta un elefante</s><s>[O.Simple [GN/S [N Alejandro]] [GV/PV [NP pinta] [GN/CD [Det un] [N elefante]]]]</s>
+<s>Cervantes escribió el Quijote</s><s>[O.Simple [GN/S [N Cervantes]] [GV/PV [NP escribió] [GN/CD [Det el] [N Quijote]]]]</s>
+<s>Tú, Juanjo, cállate</s><s>[O.Simple [GN/S [N Tú,]] [GN/Voc [N Juanjo,]] [GV/PV [NP cállate]]]</s>
+<s>Yo invité a mis amigos a mi casa</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP invité] [GPrep/CD [E [Prep a]] [GN/T [Det mis] [N amigos]]] [GPrep/CCLugar [E [Det a]] [GN/T [Det mi] [N casa]]]]]</s>
+<s>Juan fue a la playa ayer</s><s>[O.Simple [GN/S [N Juan]] [GV/PV [NP fue] [GAdv/CCLugar [E a] [GN/T [Det la] [N playa]]] [GAdv/CCTmp [N ayer]]]]</s>
+<s>Él está buscando un regalo para ella</s><s>[O.Simple [GN/S [N Él]] [GV/PV [NP está buscando] [GN/CD [Det un] [N regalo]] [GPrep/CCDestinatario [E [Prep para]] [GN/T [N ella]]]]]</s>
+<s>Esas fresas, frutas dulcísimas, son suyas</s><s>[O.Simple [GN/S [Det Esas] [N fresas,]] [GN/Apos [N frutas] [GAdj/CN [N dulcísimas,]]] [GV/PN [NP son] [GN/ATR [N suyas]]]]</s>
+<s>Yo compré este vestido para mi novia</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP compré] [GN/CD [Det este] [N vestido]] [GPrep/CI [E [Prep para]] [GN/T [Det mi] [N novia]]]]]</s>
+<s>Enrique no fue a clase por la gripe</s><s>[O.Simple [GN/S [N Enrique]] [GV/PV [GAdv/CCNeg [N no]] [NP fue] [GPrep/CCLugar [E [Prep a]] [GN/T [N clase]]] [GPrep/CCCausa [E [Prep por]] [GN/T [Det la] [N gripe]]]]]</s>
+<s>Ellos le informaron de tu lesión</s><s>[O.Simple [GN/S [N Ellos]] [GV/PV [GN/CD [N le]] [NP informaron] [GN/CR [E [Prep de]] [GN/T [Det tu] [N lesión]]]]]</s>
+<s>Paco hablará mañana</s><s>[O.Simple [GN/S [N Paco]] [GV/PV [NP hablará] [GAdv/CCTmp [N mañana]]]]</s>
+<s>Los chicos han llegado alegres al colegio</s><s>[O.Simple [GN/S [Det Los] [N chicos]] [GV/PV [NP han llegado] [GAdj/PVO [N alegres]] [GPrep/CCLugar [E [ConstPrep al]] [GN/T [N colegio]]]]]</s>
+<s>Yo el año pasado recibí una medalla del mismo gerente</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [GN/CCTmp [Det el] [N año] [GAdj/CN [N pasado]]] [NP recibí] [GN/CD [Det una] [N medalla]] [GPrep/CR [E [ConstPrep del]] [GN/T [GAdj/CN [N mismo]] [N gerente]]]]]</s>
+<s>Tú nunca hagas nada malo para ganar</s><s>[O.Simple [GN/S [N Tú]] [GV/PV [GAdv/CCTmp [N nunca]] [NP hagas] [GN/CD [N nada] [GAdj/CN [N malo]]] [GPrep/CCFinalidad [E [Prep para]] [GN/T [N ganar]]]]]</s>
+<s>El avión aterrizó con mucho retraso</s><s>[O.Simple [GN/S [Det El] [N avión]] [GV/PV [NP aterrizó] [GPrep/CCModo [E [Prep con]] [GN/T [Det mucho] [N retraso]]]]]</s>
+<s>Blanca le agradeció la colaboración</s><s>[O.Simple [GN/S [N Blanca]] [GV/PV [GN/CI [N le]] [NP agradeció] [GN/CD [Det la] [N colaboración]]]]</s>
+<s>Los bancos de este parque están pintados de verde</s><s>[O.Simple [GN/S [Det Los] [N bancos] [GPrep/CN [E [Prep de]] [GN/T [Det este] [N parque]] [GV/PN [NP están] [GAdj/ATR [N pintados] [GPrep/CAdj [E [Prep de]] [GN/T [N verde]]]]]]]]</s>
+<s>Yo se lo regalé a Andrea</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [GN/CI [N se]] [GN/CD [N lo]] [NP regalé] [GPrep/CI [E [Prep a]] [GN/T [N Andrea]]]]]</s>
+<s>Gemma abrió la caja con su llave</s><s>[O.Simple [GN/S [N Gemma]] [GV/PV [NP abrió] [GN/CD [Det la] [N caja]] [GPrep/CCInstrumento [E con] [GN/T [Det su] [N llave]]]]]</s>
+<s>El doctor Pedro es guapo</s><s>[O.Simple [GN/S [Det El] [GN/Apos [N doctor]] [Núcleo Pedro]] [GV/PN [NP es] [GAdj/ATR [N guapo]]]]</s>
+<s>Laura piensa en ella</s><s>[O.Simple [GN/S [N Laura]] [GV/PV [NP piensa] [GPrep/CR [E en] [GN/T [N ella]]]]]</s>
+<s>Nosotros partimos la tarta con el cuchillo</s><s>[O.Simple [GN/S [N Nosotros]] [GV/Grupo Verbal [NP partimos] [GN/CD [Det la] [N tarta]] [GPrep/CCInstrumento [E [Prep con]] [GN/T [Det el] [N cuchillo]]]]]</s>
+<s>Jesús saludó a Lydia</s><s>[O.Simple [GN/S [N Jesús]] [GV/PV [NP saludó] [GPrep/CD [E [Prep a]] [GN/T [N Lydia]]]]]</s>
+<s>Alberto compró arroz para comer</s><s>[O.Simple [GN/S [N Alberto]] [GV/PV [NP compró] [CD/CD [N arroz]] [GPrep/CCFinalidad [E [Prep para]] [GN/T [N comer]]]]]</s>
+<s>Yo confío en ti</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP confío] [GPrep/Complemento Régimen [E [Prep en]] [GN/T [N ti]]]]]</s>
+<s>Celia parece contenta</s><s>[O.Simple [GN/S [N Celia]] [GV/PN [NP parece] [GAdj/ATR [N contenta]]]]</s>
+<s>Otra vez, déjame ya</s><s>[O.Simple [Adjunto Periférico [N Otra vez,]] [GV/PV [NP déjame] [GAdv/CCTmp [N ya]]]]</s>
+<s>Los jugadores se insultaron durante el descanso</s><s>[O.Simple [GN/S [Det Los] [N jugadores]] [GV/PV [GN/CD [N se]] [NP insultaron] [GPrep/CCTmp [E [Prep durante]] [GN/_3 [Det el] [N descanso]]]]]</s>
+<s>Tú nunca hagas nada de esto para nadie</s><s>[O.Simple [GN/S [N Tú]] [GV/PV [GAdv/CCTmp [N nunca]] [NP hagas] [GN/CCCantidad [N nada]] [GPrep/CD [E [Prep de]] [GN/T [N esto]]] [GPrep/CI [E [Prep para]] [GN/T [N nadie]]]]]</s>
+<s>Yo compré galletas para Sandra</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP compré] [GN/S [N galletas]] [GPrep/CI [E [Prep para]] [GN/T [N Sandra]]]]]</s>
+<s>Ellos comieron tarta</s><s>[O.Simple [GN/S [N Ellos]] [GV/PV [NP comieron] [GN/CD [N tarta]]]]</s>
+<s>Yo iré a Murcia con el coche</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP iré] [GPrep/CCLugar [E [E a]] [GN/T [N Murcia]]] [GPrep/CCInstrumento [E [Prep con]] [GN/T [Det el] [N coche]]]]]</s>
+<s>Yo siempre voy con ella</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [GAdv/CCTmp [N siempre]] [NP voy] [GPrep/CCCompañía [E [Prep con]] [GN/T [N ella]]]]]</s>
+<s>Ellos compraron almohadas para dormir</s><s>[O.Simple [GN/S [N Ellos]] [GV/PV [NP compraron] [GN/CD [N almohadas]] [GPrep/CCFinalidad [E [Prep para]] [GN/T [N dormir]]]]]</s>
+<s>Isa sabe de idiomas</s><s>[O.Simple [GN/S [N Isa]] [GV/PV [NP sabe] [GPrep/CR [E [Prep de]] [GN/T [N idiomas]]]]]</s>
+<s>Sus padres le regañaron por su comportamiento</s><s>[O.Simple [GN/S [Det Sus] [N padres]] [GV/PV [GN/CD [N le]] [NP regañaron] [GPrep/CCCausa [E [Prep por]] [GN/T [Det su] [N comportamiento]]]]]</s>
+<s>Jorge compró barata su casa</s><s>[O.Simple [GN/S [N Jorge]] [GV/PV [NP compró] [GAdj/CPredicativo [N barata]] [GN/CD [Det su] [N casa]]]]</s>
+<s>Celia pegó una pegatina</s><s>[O.Simple [GN/S [N Celia]] [GV/PV [NP pegó] [GN/CD [Det una] [N pegatina]]]]</s>
+<s>Yo lo confundí con el tuyo</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [GN/CD [N lo]] [NP confundí] [GPrep/CR [E [Prep con]] [GN/T [Det el] [N tuyo]]]]]</s>
+<s>Le pisoteó una vaca</s><s>[O.Simple [GV/PV [GN/CD [Pron Le]] [NP pisoteó]] [GN/S [Det una] [N vaca]]]</s>
+<s>Alejandro ha quedado con Nuria mañana</s><s>[O.Simple [GN/S [N Alejandro]] [GV/PV [NP ha quedado] [GPrep/CCCompañía [E [Prep con]] [GN/T [N Nuria]]] [GAdv/CCTmp [N mañana]]]]</s>
+<s>Felipe, el rey, es alto</s><s>[O.Simple [GN/S [N Felipe,]] [GN/Apos [Det el] [N rey,]] [GV/PN [NP es] [GN/CD [N alto]]]]</s>
+<s>Él construyó un muro de cemento</s><s>[O.Simple [GN/S [N Él]] [GV/PV [NP construyó] [GN/CD [Det un] [N muro]] [GPrep/CCMateria [E [Prep de]] [GN/T [N cemento]]]]]</s>
+<s>Técnicamente, eso está genial</s><s>[O.Simple [Adjunto Periférico [N Técnicamente,]] [GN/S [N eso]] [GV/PN [NP está] [GAdj/Atributo [N genial]]]]</s>
+<s>Injustamente, él va a venir</s><s>[O.Simple [GAdv/AP [N Injustamente,]] [GN/S [N él]] [GV/PV [NP va a venir]]]</s>
+<s>El equipo fue denotado por el campeón</s><s>[O.Simple [GN/S [Det El] [N equipo]] [GV/PV [NP fue denotado] [GPrep/CAg [E [Prep por]] [GN/T [Det el] [N campeón]]]]]</s>
+<s>Los abuelos de Paula se gastaron cinco euros</s><s>[O.Simple [GN/S [Det Los] [N abuelos] [GPrep/CN [E de] [GN/T [N Paula]]]] [GV/PV [NP se gastaron] [GN/CCCantidad [N cinco] [N euros]]]]</s>
+<s>Felipe está cansado de eso</s><s>[O.Simple [GN/S [N Felipe]] [GV/PN [NP está] [GAdj/ATR [N cansado] [GPrep/CN [E [Prep de]] [GN/T [N eso]]]]]]</s>
+<s>Silvia estaba con Felipe anoche</s><s>[O.Simple [GN/S [N Silvia]] [GV/PN [NP estaba] [GPrep/ATR [E [E con]] [GN/T [N Felipe]]] [GAdv/CCTmp [N anoche]]]]</s>
+<s>Fran y Cristina comen mucho</s><s>[O.Simple [GN/S [N Fran] [Nx y] [N Cristina]] [GV/PV [NP comen] [GAdv/CCCantidad [N mucho]]]]</s>
+<s>Mi hermano Guille es inteligente</s><s>[O.Simple [GN/S [Det Mi] [N hermano] [GN/Apos [N Guille]]] [GV/PN [NP es] [GAdj/ATR [N inteligente]]]]</s>
+<s>Yo me he comprado cinco tartas</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [GN/CI [N me]] [NP he comprado] [GN/CD [Det cinco] [N tartas]]]]</s>
+<s>Nosotras estudiamos latín</s><s>[O.Simple [GN/S [N Nosotras]] [GV/PV [NP estudiamos] [GN/CD [N latín]]]]</s>
+<s>Anoche hizo frío</s><s>[O.Simple [GV/PV [GAdv/CCT [N Anoche]] [NP hizo] [GN/CD [N frío]]]]</s>
+<s>Evidentemente, el ganador será premiado pronto</s><s>[O.Simple [GAdv/AP [N Evidentemente,]] [GN/S [Det el] [N ganador]] [GV/PV [NP será premiado] [GAdv/CCTmp [N pronto]]]]</s>
+<s>Tú hablas demasiado en clase</s><s>[O.Simple [GN/S [N Tú]] [GV/PV [NP hablas] [GAdv/CCCantidad [N demasiado]] [GPrep/CCLugar [E [Prep en]] [GN/T [N clase]]]]]</s>
+<s>Él construyó su casa con ladrillos</s><s>[O.Simple [GN/S [N Él]] [Predicado Verbal/PV [NP construyó] [GN/CD [Det su] [N casa]] [GPrep/CCMateria [E [Prep con]] [GN/T [N ladrillos]]]]]</s>
+<s>El cuadro fue pintado por un magnífico artista</s><s>[O.Simple [GN/S [Det El] [N cuadro]] [GV/PV [NP fue pintado] [GPrep/CAg [E [Prep por]] [GN/T [Det un] [GAdj/CN [N magnífico]] [N artista]]]]]</s>
+<s>Yo he escrito un mensaje a tu madre</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP he escrito] [GN/CD [Det un] [N mensaje]] [GPrep/CI [E [Prep a]] [GN/T [Det tu] [N madre]]]]]</s>
+<s>Yo vi a Lucas</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP vi] [GN/CD [E [Prep a]] [GN/T [N Lucas]]]]]</s>
+<s>Con este saco se duerme bien</s><s>[O.Simple [GV/PV [GPrep/CCInstrumento [E [Prep Con]] [GN/T [CCModo este] [N saco]]] [Imp se] [NP duerme] [GAdv/CCModo [N bien]]]]</s>
+<s>Se conoce al caballero en la mesa y el juego</s><s>[O.Simple [GV/PV [NP Se conoce] [GPrep/CD [E [ConstPrep al]] [GN/T [N caballero]]] [GPrep/CCLugar [E [Prep en]] [GN/T [Det la] [N mesa] [Nx y] [GN/Apos [Det el] [N juego]]]]]]</s>
+<s>Ernesto lo hizo así</s><s>[O.Simple [GN/S [N Ernesto]] [GV/PV [GN/CD [N lo]] [NP hizo] [GAdv/CCModo [N así]]]]</s>
+<s>Enrique regaló un libro a su novia</s><s>[O.Simple [GN/S [N Enrique]] [GV/PV [NP regaló] [GN/CD [Det un] [N libro]] [GPrep/CI [E [Prep a]] [GN/T [Det su] [N novia]]]]]</s>
+<s>María habla con él</s><s>[O.Simple [GN/S [N María]] [GV/PV [NP habla] [GPrep/CCCompañía [E [Prep con]] [GN/T [N él]]]]]</s>
+<s>Yo encontré las flores secas</s><s>[O.Simple [GN/S [N Yo]] [GV/PV [NP encontré] [GN/CD [Det las] [N flores]] [GAdj/PVO [N secas]]]]</s>
+<s>Los romanos lo construyeron con granito</s><s>[O.Simple [GN/S [Det Los] [N romanos]] [GV/PV [GN/CD [N lo]] [NP construyeron] [GPrep/CCMateria [E [Prep con]] [GN/T [N granito]]]]]</s>
+<s>Hoy sale un nuevo disco</s><s>[O.Simple [GV/Núcleo Predicado [GAdv/CCTmp [N Hoy]] [NP sale]] [GN/S [Det un] [GAdj/CN [N nuevo]] [N disco]]]</s>
+<s>Un grajo permaneció inmóvil sobre los terrenos</s><s>[O.Simple [GN/S [Det Un] [N grajo]] [GV/PV [NP permaneció] [GAdj/CPredicativo [N inmóvil]] [GPrep/CCLugar [E [E sobre]] [GN/T [Det los] [N terrenos]]]]]</s>
+<s>Rafa, ve a casa</s><s>[O.Simple [GN/Voc [N Rafa,]] [GV/PV [NP ve] [GPrep/CCLugar [E [Prep a]] [GN/T [N casa]]]]]</s>
+<s>Pedro te encuentra raro</s><s>[O.Simple [GN/S [N Pedro]] [GV/PV [GN/CD [N te]] [NP encuentra] [GAdj/PVO [N raro]]]]</s>
+<s>El jefe echó a Juan por su comportamiento</s><s>[O.Simple [GN/S [Det El] [N jefe]] [GV/PV [NP echó] [GPrep/CI [E [Prep a]] [GN/T [N Juan]]] [GPrep/CAg [E [Prep por]] [GN/T [Det su] [N comportamiento]]]]]</s>
+<s>Pepe compró un coche</s><s>[O.Simple [Sujeto/S [N Pepe]] [GV/PV [NP compró] [GN/CD [Det un] [N coche]]]]</s>
+<s>Nosotros vivimos en Murcia</s><s>[O.Simple [GN/S [N Nosotros]] [GV/PV [NP vivimos] [GPrep/CCLugar [E [Prep en]] [GN/T [N Murcia]]]]]</s>
+<s>Tú haz la foto con el móvil</s><s>[O.Simple [GN/S [N Tú]] [GV/PV [NP haz] [GN/CD [Det la] [N foto]] [GPrep/CCInstrumento [E [Prep con]] [GN/T [Det el] [N móvil]]]]]</s>
+<s>Ana, Alejandro debería jugar al baloncesto</s><s>[O.Simple [GN/Voc [N Ana,]] [GN/S [N Alejandro]] [GV/PV [NP debería jugar] [GPrep/CR [E [ConstPrep al]] [GN/T [N baloncesto]]]]]</s>
+<s>Paloma dio el paquete</s><s>[O.Simple [GN/S [N Paloma]] [GV/PV [NP dio] [GN/CD [Det el] [N paquete]]]]</s>
+<s>Él lucha para vencer</s><s>[O.Simple [GN/S [N Él]] [GV/PV [NP lucha] [GPrep/CCFinalidad [E [Prep para]] [GN/T [N vencer]]]]]</s>
+<s>El camión fue arreglado por tu tío</s><s>[O.Simple [GN/S [Det El] [N camión]] [GV/PV [NP fue arreglado] [GPrep/CAgente [E [Prep por]] [GN/T [Det tu] [N tío]]]]]</s>
+<s>Quique compró el pan</s><s>[O.Simple [GN/S [N Quique]] [GV/PV [NP compró] [GN/CD [Det el] [N pan]]]]</s>
+<s>Nosotros hemos comido perfectamente</s><s>[O.Simple [GN/S [N Nosotros]] [GV/PV [NP hemos comido] [GAdv/CCModo [N perfectamente]]]]</s>
+<s>Pedro cocina para ella</s><s>[O.Simple [GN/S [N Pedro]] [GV/PV [NP cocina] [GPrep/CI [E [E para]] [GN/T [N ella]]]]]</s>
+<s>El gato fue rescatado por los bomberos</s><s>[O.Simple [GN/S [Det El] [N gato]] [GV/PV [NP fue rescatado] [GPrep/CAg [E por] [GN/T [Det los] [N bomberos]]]]]</s>
+<s>Mi tío Joaquín es científico</s><s>[O.Simple [GN/S [Det Mi] [N tío] [GN/Apos [N Joaquín]]] [GV/PN [Predicado Nominal es] [GN/Determinante [N científico]]]]</s>
+<s>Eso no me interesa nada</s><s>[O.Simple [GN/S [N Eso]] [GV/PV [GAdv/CC [N no]] [GN/CD [N me]] [NP interesa] [GAdv/CCCantidad [N nada]]]]</s>
+<s>Ellos hablarán mal de ti por pesado</s><s>[O.Simple [GN/S [N Ellos]] [GV/PV [NP hablarán] [GAdv/CCModo [N mal]] [GPrep/CR [E [Prep de]] [GN/T [N ti]]] [GPrep/CCCausa [E [E por]] [GN/T [N pesado]]]]]</s>

@@ -4,133 +4,464 @@ import Button from "./Button.astro";
 
 <style>
   .signup__form {
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     width: 100%;
     display: flex;
-    max-width: 600px;
+    max-width: 560px;
     flex-direction: row;
+    gap: 0.5rem;
   }
 
   input[type="text"] {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: 2px solid #ccc;
-    color: #000000;
+    flex: 1;
+    min-width: 0;           /* permite que el input se encoja */
+    padding: 0.55rem 1.1rem;
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #000;
     border-radius: 2rem;
-    outline-style: none;
+    outline: none;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    background: white;
   }
 
-  input:focus {
-    border: 2px solid #000;
+  input:focus { border-color: #000; }
+
+  .signup__form :global(.btn) { white-space: nowrap; flex-shrink: 0; }
+
+  /* En móvil muy estrecho, pone el botón debajo */
+  @media (max-width: 420px) {
+    .signup__form { flex-direction: column; align-items: stretch; }
+    .signup__form :global(.btn) { text-align: center; }
   }
 
-  .signup__form :global(.btn) {
-    margin-left: 1rem;
+  /* ── Toggle de modo ─────────────────────────────────────── */
+  .mode-toggle {
+    display: inline-flex;
+    margin-top: 0.85rem;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 2rem;
+    padding: 3px;
   }
 
-  @media (max-width: 600px) {
-    .signup__form {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    input[type="text"] {
-      margin-bottom: 1rem;
-    }
-
-    .signup__form :global(.btn) {
-      margin-left: 0;
-      width: 40%;
-      text-align: center;
-    }
+  .mode-btn {
+    padding: 0.35rem 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: clamp(0.78rem, 2.5vw, 0.88rem);
+    font-weight: 600;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.88);
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.02em;
   }
 
-  /* Estilos del Canvas */
-  .canvas {
-    border: 3px solid #000; /* Borde más grueso */
-    padding: 2rem; /* Más espacio interno */
-    margin-top: 1.5rem; /* Más separación del input */
-    width: 600px; /* Tamaño para escritorio */
-    height: 300px; /* Tamaño para escritorio */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white !important; /* Asegura fondo blanco */
-    font-size: 1.5rem; /* Letra más grande */
-    font-weight: bold; /* Texto más destacado */
-    color: black !important; /* Asegura texto negro */
-    text-align: center; /* Centrar el texto */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  .mode-btn.active {
+    background: white;
+    color: #0f6fdc;
   }
 
-  /* Estilos para móviles */
-  @media (max-width: 600px) {
-    .canvas {
-      width: 300px; /* Se ajusta al ancho del dispositivo */
-      height: 200px; /* Más pequeño en móviles */
-      font-size: 1.2rem; /* Letra un poco más pequeña */
-      padding: 1rem; /* Menos espacio interno */
-    }
+  /* ── Contenedor del dibujo ──────────────────────────────── */
+  #treeContainer {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  #treeContainer canvas {
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    background: white;
+    /* Sin padding en el elemento canvas — el padding va en la lógica de dibujo */
+  }
+
+  #statusMsg {
+    color: rgba(255,255,255,0.9);
+    font-size: clamp(0.88rem, 2.5vw, 1rem);
+    margin-top: 0.75rem;
+    min-height: 1.4rem;
   }
 </style>
 
-<!-- Formulario -->
 <form class="signup__form fade-in" id="analyzeForm">
   <input type="text" id="phraseInput" placeholder="Frase a analizar" required />
   <Button type="submit">¡Analiza! 🚀</Button>
 </form>
 
-<!-- Contenedor donde se inyectará el Canvas dinámicamente -->
-<div id="canvasContainer"></div>
+<div class="mode-toggle" id="modeToggle">
+  <button class="mode-btn active" data-mode="cajitas">Cajitas</button>
+  <button class="mode-btn"        data-mode="arbol">Árbol</button>
+</div>
+
+<p id="statusMsg"></p>
+<div id="treeContainer"></div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("analyzeForm");
-    const phraseInput = document.getElementById("phraseInput");
-    const canvasContainer = document.getElementById("canvasContainer");
+// ═══════════════════════════════════════════════════════════════
+//  PARSER: notación de corchetes → objeto JS anidado
+// ═══════════════════════════════════════════════════════════════
+function parseBracketNotation(str: string): Record<string, any> {
+  const tokens: string[] = [];
+  let cur = '';
+  for (const ch of str.trim()) {
+    if (ch === '[' || ch === ']') {
+      if (cur.trim()) tokens.push(cur.trim());
+      tokens.push(ch);
+      cur = '';
+    } else if (ch === ' ') {
+      if (cur.trim()) tokens.push(cur.trim());
+      cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  if (cur.trim()) tokens.push(cur.trim());
 
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const phrase = phraseInput.value.trim();
+  let pos = 0;
+  function parseNode(): [string, any] {
+    pos++;
+    const label = tokens[pos++];
+    const keyCounts: Record<string, number> = {};
+    if (tokens[pos] !== '[') {
+      const word = tokens[pos++];
+      pos++;
+      return [label, word];
+    }
+    const children: Record<string, any> = {};
+    while (pos < tokens.length && tokens[pos] === '[') {
+      const [childLabel, childValue] = parseNode();
+      let key = childLabel;
+      if (key in keyCounts) { keyCounts[key]++; key += '@'.repeat(keyCounts[key]); }
+      else keyCounts[key] = 0;
+      children[key] = childValue;
+    }
+    pos++;
+    return [label, children];
+  }
 
-      if (!phrase) {
-        alert("Por favor, introduce una frase.");
-        return;
-      }
+  const [label, value] = parseNode();
+  return { [label]: value };
+}
 
-      // Borramos cualquier canvas previo
-      canvasContainer.innerHTML = "";
+// ═══════════════════════════════════════════════════════════════
+//  CAJITAS — port del PhrasePainter de Flutter
+//  Frase arriba, líneas horizontales por nivel, raíz abajo
+// ═══════════════════════════════════════════════════════════════
+function dfsLeaves(obj: Record<string, any>, prefix = ''): [string, string][] {
+  const result: [string, string][] = [];
+  for (const [key, val] of Object.entries(obj)) {
+    const path = prefix ? `${prefix}|${key}` : key;
+    if (typeof val === 'string') result.push([path, val]);
+    else result.push(...dfsLeaves(val, path));
+  }
+  return result;
+}
 
-      // Creamos un div para el "canvas" (solo visual; si usas <canvas> real, igual)
-      const canvasDiv = document.createElement("div");
-      canvasDiv.classList.add("canvas");
-      canvasDiv.textContent = "Analizando la frase, por favor espera...";
-      canvasContainer.appendChild(canvasDiv);
+function phraseConverter(tree: Record<string, any>): Record<number, Record<string, string>> {
+  const leavesOrdered = dfsLeaves(tree);
+  const drawing: Record<number, Record<string, string>> = {};
+  let level = 0;
+  let decoded: Record<string, any> = tree;
+  let nextKeys = Object.keys(decoded);
 
-      try {
-        // Llamamos al endpoint que creamos
-        const response = await fetch("/api/analyze", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: phrase }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Error en la respuesta del servidor.");
+  while (nextKeys.length > 0) {
+    const currentKeys = nextKeys;
+    nextKeys = [];
+    const flattened: Record<string, any> = {};
+    drawing[level] = {};
+    for (const curKey of currentKeys) {
+      drawing[level][curKey] = '';
+      const val = decoded[curKey];
+      if (typeof val === 'string') { drawing[level][curKey] = val; }
+      else {
+        for (const [childKey, childVal] of Object.entries(val)) {
+          const newKey = `${curKey}|${childKey}`;
+          nextKeys.push(newKey);
+          flattened[newKey] = childVal;
         }
-
-        const result = await response.json();
-        if (result.success) {
-          // Aquí sustituyes el texto por el análisis que viene de OpenAI
-          canvasDiv.textContent = result.analysis;
-        } else {
-          canvasDiv.textContent = "No se pudo analizar la frase.";
-        }
-      } catch (error) {
-        console.error("Error en el análisis:", error);
-        canvasDiv.textContent = "Hubo un error al analizar la frase.";
       }
+    }
+    level++;
+    decoded = flattened;
+  }
+
+  for (let lv = 0; lv < level; lv++) {
+    for (const path of Object.keys(drawing[lv] || {})) {
+      const pfx = path + '|';
+      const words = leavesOrdered.filter(([p]) => p === path || p.startsWith(pfx)).map(([, w]) => w);
+      if (words.length > 0) drawing[lv][path] = words.join(' ');
+    }
+  }
+  return drawing;
+}
+
+// ── Helper: configura canvas con HiDPI + scale-to-fit opcional ──
+function setupCanvas(
+  canvas: HTMLCanvasElement,
+  logicalW: number,
+  logicalH: number,
+  maxW: number,
+): { ctx: CanvasRenderingContext2D; scale: number } {
+  const scale = Math.min(1, maxW / logicalW);
+  const dpr   = window.devicePixelRatio || 1;
+  canvas.width  = Math.ceil(logicalW * scale * dpr);
+  canvas.height = Math.ceil(logicalH * scale * dpr);
+  canvas.style.width  = Math.ceil(logicalW * scale) + 'px';
+  canvas.style.height = Math.ceil(logicalH * scale) + 'px';
+  const ctx = canvas.getContext('2d')!;
+  ctx.scale(dpr * scale, dpr * scale);
+  ctx.clearRect(0, 0, logicalW, logicalH);
+  return { ctx, scale };
+}
+
+function drawCajitas(canvas: HTMLCanvasElement, tree: Record<string, any>, maxW: number) {
+  const drawing = phraseConverter(tree);
+  const maxDepth = Object.keys(drawing).length;
+
+  const FONT_SIZE = 18, GROUP_SIZE = 12, LINE_W = 1.5;
+  const LEVEL_GAP = 50, LABEL_GAP = 5, PAD = 16;
+  const PHRASE_FONT = `${FONT_SIZE}px 'Open Sans', sans-serif`;
+  const GROUP_FONT  = `bold ${GROUP_SIZE}px 'Open Sans', sans-serif`;
+
+  // Measure on a temp context first (canvas not yet sized)
+  const tmpCtx = document.createElement('canvas').getContext('2d')!;
+  tmpCtx.font = PHRASE_FONT;
+  const spaceW = tmpCtx.measureText(' ').width;
+
+  function sliceW(phrase: string) {
+    tmpCtx.font = PHRASE_FONT;
+    const ws = phrase.split(' ');
+    let w = 0;
+    for (const word of ws) w += tmpCtx.measureText(word).width;
+    return w + Math.max(0, ws.length - 1) * spaceW;
+  }
+
+  const sentence = Object.values(drawing[0])[0];
+  const logicalW = sliceW(sentence) + 2 * PAD;
+  const lineBaseOffset = Math.ceil(FONT_SIZE * 20 / 15);
+  const logicalH = FONT_SIZE + lineBaseOffset + (maxDepth - 1) * LEVEL_GAP + LABEL_GAP + GROUP_SIZE + PAD;
+
+  const { ctx } = setupCanvas(canvas, logicalW, logicalH, maxW);
+
+  ctx.font = PHRASE_FONT; ctx.fillStyle = '#111';
+  let phraseX = PAD;
+  for (const word of sentence.split(' ')) {
+    ctx.fillText(word, phraseX, FONT_SIZE);
+    phraseX += ctx.measureText(word).width + spaceW;
+  }
+
+  const fatherHP: Record<string, number> = {};
+  for (let depth = 0; depth < maxDepth; depth++) {
+    const lineY  = FONT_SIZE + lineBaseOffset + (maxDepth - 1 - depth) * LEVEL_GAP;
+    const labelY = lineY + LABEL_GAP + GROUP_SIZE;
+    let xInitial = PAD, firstTime = true;
+
+    for (const [pathKey, words] of Object.entries(drawing[depth])) {
+      const parts = pathKey.split('|');
+      fatherHP[pathKey] = xInitial;
+      if (depth > 0 && firstTime) {
+        const pp = parts.slice(0, -1).join('|');
+        if (fatherHP[pp] !== undefined) xInitial = fatherHP[pp];
+        firstTime = false;
+      }
+      const groupW = sliceW(words);
+      const rawLabel = parts[parts.length - 1];
+      if (!/^_\d+$/.test(rawLabel)) {
+        ctx.beginPath(); ctx.strokeStyle = '#1a1a2e'; ctx.lineWidth = LINE_W;
+        ctx.moveTo(xInitial, lineY); ctx.lineTo(xInitial + groupW, lineY); ctx.stroke();
+        const label = rawLabel.replace(/@+$/, '');
+        ctx.font = GROUP_FONT; ctx.fillStyle = '#0f3460';
+        const lw = ctx.measureText(label).width;
+        ctx.fillText(label, xInitial + groupW / 2 - lw / 2, labelY);
+      }
+      xInitial += groupW + spaceW;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ÁRBOL — árbol sintáctico clásico (raíz arriba, palabras abajo)
+// ═══════════════════════════════════════════════════════════════
+interface TreeNode {
+  label: string;
+  x: number;
+  y: number;
+  word: string | null;
+  children: TreeNode[];
+}
+
+function drawArbol(canvas: HTMLCanvasElement, tree: Record<string, any>, maxW: number) {
+  const FONT_SIZE  = 16;
+  const GROUP_SIZE = 14;
+  const ROW_H      = 65;
+  const GAP        = 18;
+  const PAD        = 24;
+
+  const FONT       = `${FONT_SIZE}px 'Open Sans', sans-serif`;
+  const GROUP_FONT = `bold ${GROUP_SIZE}px 'Open Sans', sans-serif`;
+
+  // Use a temp canvas for pre-layout measurements
+  const m = document.createElement('canvas').getContext('2d')!;
+
+  // ── Fase 1: ancho mínimo de cada subárbol ─────────────────
+  function subtreeW(val: any, label: string): number {
+    const clean = label.replace(/@+$/, '');
+    m.font = GROUP_FONT;
+    const lw = m.measureText(clean).width + 20;
+    if (typeof val === 'string') {
+      m.font = FONT;
+      return Math.max(lw, m.measureText(val).width + 20);
+    }
+    const entries = Object.entries(val);
+    const total = entries.reduce((s: number, [k, v]) => s + subtreeW(v, k), 0)
+                + Math.max(0, entries.length - 1) * GAP;
+    return Math.max(lw, total);
+  }
+
+  // ── Fase 2: asignar posiciones ────────────────────────────
+  function layout(val: any, label: string, depth: number, leftX: number, sw: number): TreeNode {
+    const cx = leftX + sw / 2;
+    const y  = depth * ROW_H + PAD;
+    const node: TreeNode = { label: label.replace(/@+$/, ''), x: cx, y, word: null, children: [] };
+
+    if (typeof val === 'string') { node.word = val; return node; }
+
+    let curX = leftX;
+    const entries = Object.entries(val);
+    for (let i = 0; i < entries.length; i++) {
+      const [k, v] = entries[i];
+      const cw = subtreeW(v, k);
+      node.children.push(layout(v, k, depth + 1, curX, cw));
+      curX += cw + (i < entries.length - 1 ? GAP : 0);
+    }
+    return node;
+  }
+
+  const [rootKey, rootVal] = Object.entries(tree)[0];
+  const rw   = subtreeW(rootVal, rootKey);
+  const root = layout(rootVal, rootKey, 0, PAD, rw);
+
+  // ── Profundidad máxima ────────────────────────────────────
+  function maxD(node: TreeNode): number {
+    if (node.children.length === 0) return node.word ? 1 : 0;
+    return 1 + Math.max(...node.children.map(maxD));
+  }
+  const depth = maxD(root);
+
+  const logicalW = rw + 2 * PAD;
+  const logicalH = (depth + 1) * ROW_H + FONT_SIZE + PAD * 2;
+
+  const { ctx } = setupCanvas(canvas, logicalW, logicalH, maxW);
+
+  // ── Fase 3: dibujar ───────────────────────────────────────
+  function draw(node: TreeNode, parentX: number | null, parentY: number | null) {
+    if (parentX !== null && parentY !== null) {
+      ctx.beginPath();
+      ctx.strokeStyle = '#444';
+      ctx.lineWidth = 1;
+      ctx.moveTo(parentX, parentY + 3);
+      ctx.lineTo(node.x, node.y - GROUP_SIZE - 3);
+      ctx.stroke();
+    }
+
+    ctx.font = GROUP_FONT;
+    ctx.fillStyle = '#1a1a2e';
+    const lw = ctx.measureText(node.label).width;
+    ctx.fillText(node.label, node.x - lw / 2, node.y);
+
+    if (node.word !== null) {
+      const wordY = node.y + ROW_H;
+      ctx.beginPath();
+      ctx.strokeStyle = '#444';
+      ctx.lineWidth = 1;
+      ctx.moveTo(node.x, node.y + 3);
+      ctx.lineTo(node.x, wordY - FONT_SIZE - 3);
+      ctx.stroke();
+
+      ctx.font = FONT;
+      ctx.fillStyle = '#111';
+      const ww = ctx.measureText(node.word).width;
+      ctx.fillText(node.word, node.x - ww / 2, wordY);
+    }
+
+    for (const child of node.children) draw(child, node.x, node.y);
+  }
+
+  draw(root, null, null);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  RENDER: elige cajitas o árbol según el modo activo
+// ═══════════════════════════════════════════════════════════════
+function renderResult(bracketStr: string, mode: string, container: HTMLElement) {
+  container.innerHTML = '';
+  try {
+    const tree   = parseBracketNotation(bracketStr);
+    const canvas = document.createElement('canvas');
+    container.appendChild(canvas);
+    const maxW = container.clientWidth - 32;
+    if (mode === 'arbol') drawArbol(canvas, tree, maxW);
+    else                  drawCajitas(canvas, tree, maxW);
+  } catch (e) {
+    console.error('Error dibujando:', e);
+    const div = document.createElement('div');
+    div.style.cssText = 'background:white;border-radius:12px;padding:1rem;color:#000;font-family:monospace;font-size:0.85rem;word-break:break-all;';
+    div.textContent = bracketStr;
+    container.appendChild(div);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  FORMULARIO + TOGGLE
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  const form      = document.getElementById('analyzeForm')!;
+  const input     = document.getElementById('phraseInput') as HTMLInputElement;
+  const status    = document.getElementById('statusMsg')!;
+  const container = document.getElementById('treeContainer')!;
+  const modeBtns  = document.querySelectorAll<HTMLButtonElement>('.mode-btn');
+
+  let currentMode    = 'cajitas';
+  let lastBracketStr = '';
+
+  // Toggle de modo
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = btn.dataset.mode!;
+      if (lastBracketStr) renderResult(lastBracketStr, currentMode, container);
     });
   });
+
+  // Envío del formulario
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const phrase = input.value.trim();
+    if (!phrase) return;
+
+    container.innerHTML = '';
+    status.textContent  = 'Analizando…';
+
+    try {
+      const res    = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: phrase }),
+      });
+      const result = await res.json();
+      status.textContent = '';
+
+      if (result.success) {
+        lastBracketStr = result.analysis;
+        renderResult(lastBracketStr, currentMode, container);
+      } else {
+        status.textContent = 'No se pudo analizar la frase.';
+      }
+    } catch (err) {
+      console.error(err);
+      status.textContent = 'Error al conectar con el servidor.';
+    }
+  });
+});
 </script>

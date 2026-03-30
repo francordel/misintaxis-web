@@ -17,23 +17,22 @@ const seo = {
     align-items: center;
     min-height: 70vh;
     text-align: center;
+    padding: 2rem 0 3rem;
+    width: 100%;
   }
-   /* Estilos para el título con bordes negros */
-   h1 {
-    font-size: 3rem; /* Ajusta el tamaño según sea necesario */
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: bold;
-    color: white; /* Color del texto principal */
-    text-shadow: 
-      -1px -1px 0 black,  
-      1px -1px 0 black,  
-      -1px 1px 0 black,  
-      1px 1px 0 black; /* Contorno negro */
+    color: white;
+    text-shadow:
+      -1px -1px 0 black, 1px -1px 0 black,
+      -1px  1px 0 black, 1px  1px 0 black;
   }
-  /* Opcional: Ajustar en pantallas más pequeñas */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2.5rem;
-    }
+
+  p.fade-in {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    margin-bottom: 0.25rem;
   }
 </style>
 

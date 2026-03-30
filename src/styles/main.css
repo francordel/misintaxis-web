@@ -1,17 +1,17 @@
 :root {
-  /* Colors */
-  --theme-primary: hsl(0, 0%, 5%);
-  --theme-on-primary: hsl(0, 0%, 90%);
-  --theme-primary--hover: #000;
+  /* Colors — MiSintaxis blue */
+  --theme-primary: #0f6fdc;
+  --theme-on-primary: #ffffff;
+  --theme-primary--hover: #0a55b0;
   --theme-secondary: #ffffff;
-  --theme-on-secondary: #000000;
-  --theme-secondary--hover: #ffffff;
+  --theme-on-secondary: #0f6fdc;
+  --theme-secondary--hover: #e8f2ff;
 
-  --theme-background: hsl(0, 0%, 5%);
+  --theme-background: #1278e8;
   --theme-on-background: hsl(0, 0%, 98%);
 
-  --theme-surface-1: hsl(0, 0%, 92%);
-  --theme-on-surface-1: hsl(0, 0%, 10%);
+  --theme-surface-1: rgba(255, 255, 255, 0.15);
+  --theme-on-surface-1: #ffffff;
 
   /* Typography */
   /* @link https://utopia.fyi/type/calculator?c=320,20,1.2,1920,28,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
@@ -31,9 +31,15 @@
   --body-max-width: 1920px;
 
   /* Container */
-  --container-padding: 0 1rem;
+  --container-padding: 0 1.25rem;
   --container-max-width: 1440px;
   --container-max-width-narrow: 960px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0 0.75rem;
+  }
 }
 
 html {
@@ -51,9 +57,8 @@ body {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: var(--theme-background) url('/misintaxis-web/assets/images/bg.svg') no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(160deg, #55ccff 0%, #1a90f5 40%, #0040c0 100%);
+  min-height: 100vh;
 }
 
 .flow>*+* {
